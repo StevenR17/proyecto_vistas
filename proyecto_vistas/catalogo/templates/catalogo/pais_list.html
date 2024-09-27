@@ -1,0 +1,10 @@
+<h2>Lista de Países</h2>
+<ul>
+    {% for pais in paises %}
+        <li>{{ pais.nombre }} ({{ pais.codigo }}) - 
+            <a href="{% url 'pais_update' pais.pk %}">Editar</a> | 
+            <a href="{% url 'pais_delete' pais.pk %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'pais_create' %}">Agregar País</a>
